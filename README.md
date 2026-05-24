@@ -1,19 +1,29 @@
-# VintEdge Wine Quality Workspace
+# Data Science Workspaces
 
-An interactive machine learning workspace analyzing the physicochemical properties of red and white wines. The project contains a model training pipeline (Random Forest Classifier) and a premium Streamlit visualization dashboard showcasing an interactive "Virtual Sommelier" and chemical analytics.
+This repository contains two interactive machine learning workspaces designed with premium dark-mode Streamlit visualization dashboards:
+
+1.  **VintEdge Wine Quality Workspace** (Root directory): Analyzes the physicochemical properties of red and white wines, incorporating a Random Forest Classifier to serve as a "Virtual Sommelier".
+2.  **PetroPulse Upstream Oil & Gas Workspace** (`oil_gas_production/`): Simulates daily operational telemetry of a production well, incorporating a Virtual Flow Metering Random Forest Regressor to predict oil flow rates from sensor data.
 
 ---
 
 ## 📁 Workspace Structure
 
-*   `app.py`: Main Streamlit application with custom glassmorphic styling, analytics plots, and prediction dashboards.
-*   `requirements.txt`: Python package dependencies.
-*   `data/`: Directory containing generated CSV datasets, trained classification models, and feature metadata.
-*   `notebooks/`: Contains `eda_analysis.ipynb` for interactive data analysis, correlation testing, and model prototyping.
-*   `scripts/`: Automation utilities:
-    *   `download_data.py`: Sourcing helper with statistically accurate synthetic data generation fallback.
-    *   `train_model.py`: Random Forest model training and evaluation script.
-    *   `verify_app_logic.py`: Logic verification script to programmatically validate datasets and inference.
+### 🍷 VintEdge Wine Quality (Root)
+*   `app.py`: Wine quality Streamlit application.
+*   `requirements.txt`: Python dependencies.
+*   `data/`: CSV datasets, trained classification models, and feature metadata.
+*   `notebooks/eda_analysis.ipynb`: Jupyter notebook for wine data analysis.
+*   `scripts/`: Automation scripts (`download_data.py`, `train_model.py`, `verify_app_logic.py`).
+
+### 🛢️ PetroPulse Oil & Gas (`oil_gas_production/`)
+*   `oil_gas_production/app.py`: Flow meter and decline analysis Streamlit dashboard.
+*   `oil_gas_production/data/`: Simulated daily production CSV and flow meter models.
+*   `oil_gas_production/notebooks/oil_gas_eda.ipynb`: Jupyter notebook for production time-series analysis.
+*   `oil_gas_production/scripts/`:
+    *   `generate_data.py`: Physically grounded well simulation engine.
+    *   `train_forecaster.py`: Model training script for the regression pipeline.
+    *   `verify_pipeline.py`: Pipeline automation tester.
 
 ---
 
@@ -30,14 +40,16 @@ An interactive machine learning workspace analyzing the physicochemical properti
     pip install -r requirements.txt
     ```
 
-3.  **Train the Classification Models:**
+3.  **To run the Wine Quality Workspace:**
     ```bash
     python3 scripts/train_model.py
+    python3 -m streamlit run app.py
     ```
 
-4.  **Run the Streamlit App:**
+4.  **To run the PetroPulse Oil & Gas Workspace:**
     ```bash
-    python3 -m streamlit run app.py
+    python3 oil_gas_production/scripts/train_forecaster.py
+    python3 -m streamlit run oil_gas_production/app.py
     ```
 
 ---
