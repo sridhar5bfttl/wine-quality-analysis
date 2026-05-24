@@ -91,3 +91,4 @@ gcloud run deploy wine-quality-app \
 ```
 
 Once Step 5 completes, Cloud Shell will print a public HTTPS URL where your Streamlit app is live on Google Cloud.
+Example: https://wine-quality-app-1000479190734.us-central1.run.app
